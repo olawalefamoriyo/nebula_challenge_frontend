@@ -1,0 +1,229 @@
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.register-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.register-header {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.register-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.register-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.register-form-container {
+  padding: 40px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register-form .form-group {
+  margin-bottom: 0;
+}
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  padding-right: 50px !important;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:hover {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+  color: #667eea;
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.register-form .btn-register {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.register-form .btn-register:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.register-form .btn-register:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.register-info {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+}
+
+.register-info h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.register-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  text-align: left;
+}
+
+.register-info li {
+  color: #666;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.register-info li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.login-link {
+  text-align: center;
+}
+
+.login-link p {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.login-link .btn-secondary {
+  background: linear-gradient(45deg, #6c757d, #495057);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.login-link .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(108, 117, 125, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .register-form-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .register-header {
+    padding: 30px 20px;
+  }
+  
+  .register-header h1 {
+    font-size: 2rem;
+  }
+  
+  .register-container {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 10px;
+  }
+  
+  .register-header {
+    padding: 25px 15px;
+  }
+  
+  .register-form-container {
+    padding: 30px 20px;
+  }
+} 

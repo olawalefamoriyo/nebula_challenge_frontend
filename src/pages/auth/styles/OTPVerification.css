@@ -1,0 +1,261 @@
+.otp-verification-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.otp-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.otp-header {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.otp-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.otp-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.otp-form-container {
+  padding: 40px 30px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: 1px solid #e9ecef;
+}
+
+.user-avatar {
+  font-size: 2rem;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.user-details p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.otp-form {
+  margin-bottom: 30px;
+}
+
+.otp-form .form-group {
+  margin-bottom: 20px;
+}
+
+.otp-input {
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #333;
+}
+
+.otp-hint {
+  display: block;
+  margin-top: 8px;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.btn-verify {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-verify:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-verify:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.resend-section {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.resend-section p {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.btn-resend {
+  background: linear-gradient(45deg, #6c757d, #495057);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-resend:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(108, 117, 125, 0.3);
+}
+
+.btn-resend:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.otp-info {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.otp-info h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.otp-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.otp-info li {
+  color: #666;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.otp-info li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .otp-header {
+    padding: 30px 20px;
+  }
+  
+  .otp-header h1 {
+    font-size: 2rem;
+  }
+  
+  .otp-container {
+    margin: 10px;
+  }
+  
+  .otp-form-container {
+    padding: 30px 20px;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .otp-input {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .otp-verification-page {
+    padding: 10px;
+  }
+  
+  .otp-header {
+    padding: 25px 15px;
+  }
+  
+  .otp-form-container {
+    padding: 25px 15px;
+  }
+  
+  .otp-input {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+} 
