@@ -8,10 +8,14 @@ import OTPVerification from './pages/auth/pages/OTPVerification';
 import SubmitScore from './pages/score/pages/SubmitScore';
 import Leaderboard from './pages/leaderboard/pages/Leaderboard';
 import './App.css';
+import websocketClient from './services/websocket';
+import Message from './components/layout/Message';
+
 
 function App() {
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [wsConnected, setWsConnected] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -28,12 +32,32 @@ function App() {
         localStorage.removeItem('user');
       }
     }
+
+    websocketClient.connect(
+      (data) => {
+        if (data && data.type === 'highScore') {
+          alert(data.data?.message || 'High score notification!');
+        }
+      },
+      () => setWsConnected(true)
+    );
+
+    return () => {
+      websocketClient.disconnect();
+    };
   }, []);
 
   return (
     <Router>
       <div className="App">
         <Header user={user} setUser={setUser} setUserId={setUserId} />
+        {wsConnected && (
+          <Message
+            message="WebSocket connected"
+            type="success"
+            onClose={() => setWsConnected(false)}
+          />
+        )}
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://nebula-backend-qg71.onrender.com';
+// const API_BASE_URL = 'https://nebula-backend-qg71.onrender.com';
+const API_BASE_URL = 'http://localhost:3001';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -74,7 +74,7 @@ export const submitScore = async (scoreData) => {
   try {
     const userData = localStorage.getItem('user');
     const token = userData ? JSON.parse(userData).accessToken : null;
-    
+        
     const config = {
       headers: {
         'Content-Type': 'application/json',
